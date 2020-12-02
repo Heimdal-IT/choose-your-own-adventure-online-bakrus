@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="utseende2.css">
+    <meta charset="utf-8">
+    
+    <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <div class="karakter">
+       <h3>Velg Karakter:</h3>
+       
+       <div>
+           <label for="rdReodor" class="style" id="labelReodor">
+                <input type="radio" class="karakter" name="karakter" id="rdReodor" value="Reodor Felgen">
+                <img src="reodor.jpg" id="redern">
+                <p>Reodor Felgen</p>
+           </label>
+           <label for="rdSolan" class="style" id="labelSolan">
+                <input type="radio" class="karakter" name="karakter" id="rdSolan" value="Solan">
+                <img src="solan2.jpg" id="solern">
+                <p>Solan</p>
+           </label>
+           <label for="rdLudvig" class="style" id="labelLudvig">
+                <input type="radio" class="karakter" name="karakter" id="rdLudvig" value="Ludvig">
+                <img src="ludvig3.jpg" id="luddern">
+                <p>Ludvig</p>
+           </label>
+       </div>
+   </div>
+    
+</body>
+    
+    <body onload="spillMusikk()">
+    
+   
+   <audio id="musikken">
+        <source src="jazz.mp3" type="audio/mpeg">
+        </audio>
+    
+    
+    
+    
+    </body>
+    
+    <script>
+    var lyd = new Audio("jazz.mp3");
+    
+    function spillMusikk(){
+        
+        
+        lyd.play();
+        
+    }
+    
+        
+    </script>
+    
+</html>
+
+
+
+
