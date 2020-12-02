@@ -1,0 +1,25 @@
+body{
+    background-image: url(bakgrunn.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    background-color: burlywood;
+}
+
+
+#startspill{
+    height: 60px;
+    width: 15%;
+    font-family: monospace;
+    font-size: 25px;
+    background-color: burlywood;
+}
+#startspill:hover{
+    background-color: chocolate;
+}
+
+div{
+   text-align: center;
+    margin-top: 33%;
+}
+
