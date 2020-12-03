@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="utseende2.css">
+
+</head>
+
+<body>
+    
+    <br>
+    
+    <br>
+    
+    <br>
+    
+    <br>
+    
+    <br>
+    
+    
+    <div class="karakter">
+        <h3>Velg Karakter:</h3>
+
+        <table>
+            <tr>
+                <td>
+                    <label for="rdReodor" class="style" id="labelReodor">
+                        <input type="radio" class="karakter" name="karakter" id="rdReodor" value="Reodor Felgen">
+                        <img src="reodor.jpg" id="redern">
+                        <p>Reodor Felgen</p>
+                    </label>
+                </td>
+                <td><label for="rdSolan" class="style" id="labelSolan">
+                        <input type="radio" class="karakter" name="karakter" id="rdSolan" value="Solan">
+                        <img src="solan2.jpg" id="solern">
+                        <p>Solan</p>
+                    </label></td>
+                <td><label for="rdLudvig" class="style" id="labelLudvig">
+                        <input type="radio" class="karakter" name="karakter" id="rdLudvig" value="Ludvig">
+                        <img src="ludvig3.jpg" id="luddern">
+                        <p>Ludvig</p>
+                    </label></td>
+            </tr>
+            <tr>
+                <td>Reodor Felgen <br>
+                    Alder: 62 år <br>
+                    Type: Menneske <br>
+                    Beskrivelse:
+                    Oppfinner med varme egenskaper ovenfor andre. Veldig god til å se løsninger.
+                </td>
+                <td>
+                    Solan <br>
+                    Alder: 15 år <br>
+                    Art: Pica pica (Skjære) <br>
+                    Beskrivelse:
+                    Spenstig og eventyrlysten sjel. God evne til å se uvanlige løsninger på problemer som et resultat av spenstigheten hans.
+
+                </td>
+                <td>
+                    Ludvig <br>
+                    Alder: 13 år <br>
+                    Art: Erinaceus europaeus(Piggsvin) <br> 
+                    Beskrivelse <br>
+                    asodjadosj
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <br>
+    
+    <br>
+    
+    <br>
+
+    <div id="karaktervalgt"><input type="button" id="valgt" value="Begynn spillet" onclick="valgtKarakter()"></div>
+    
+</body>
+
+
+    
+    <body onload="spillMusikk()">
+    
+   
+   <audio id="musikken">
+        <source src="jazz.mp3" type="audio/mpeg">
+        </audio>
+    
+    
+    
+    
+    </body>
+    
+    <script>
+    var lyd = new Audio("jazz.mp3");
+    
+    function spillMusikk(){
+        
+        
+        lyd.play();
+        
+    }
+    
+        
+    </script>
+    
+</html>
+
+
+
+
