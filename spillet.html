@@ -1,0 +1,170 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flåklypa Adventure</title>
+    <link rel="stylesheet" href="spillet.css">
+    <link rel="icon" href="bilder/icon.png"
+</head>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type='text/css'>
+<div id="images">
+</div>
+<div id="text">
+</div>
+<input id="input" onkeypress="player" placeholder='Skriv inn navnet ditt og trykk enter'>
+<div id="buttonBox">
+</div>
+
+
+
+<body onload="spillMusikk()">
+</body>
+
+
+<div id="restart" align="center"><a href="spillside1.html"><input type="button" id="omigjen" value="Start på nytt"></a></div>
+
+<script>
+    var lyd = new Audio("bakgrunn.mp3");
+
+    function spillMusikk() {
+
+
+        lyd.play();
+
+    }
+
+
+
+    var images = document.getElementById("images"); //Dette er variabelen som refererer til bildet som settes inn i programmet
+    var text = document.getElementById("text"); //Dette er variabelen som refererer til teksten under bildet
+    var buttonBox = document.getElementById('buttonBox'); //Dette er variabelen som refererer til knappefeltet i programmet
+    var input = document.getElementById('input'); //Dette er inngangen til programmet
+    var player; //Dette er spilleren
+
+    input.onkeypress = function(event) { //Dette er inngangen på skjermbildet for videospillet
+        if (event.key == "Enter" || event.keyCode == 13) {
+            player = input.value;
+            input.parentNode.removeChild(input);
+            advanceTo(scenario.two);
+        }
+    };
+
+
+    var changeText = function(words) { //Dette endrer en viss setning til karakteren som brukeren har valgt
+        text.innerHTML = words.replace("NAVN", player);
+    };
+
+    var changeImage = function(img) { //Denne skifter bildene i teksteventyret
+        images.style.backgroundImage = "url(" + img + ")";
+    };
+
+    var changeButtons = function(buttonList) { //Denne skifter teksten i teksteventyret
+        buttonBox.innerHTML = "";
+        for (var i = 0; i < buttonList.length; i++) {
+            buttonBox.innerHTML += "<button onClick=" + buttonList[i][1] + ">" + buttonList[i][0] + "</button>";
+        }
+    };
+    //Funksjon som får spillet til å gå videre, den bytter scener
+    var advanceTo = function(s) {
+        changeImage(s.image);
+        changeText(s.text);
+        changeButtons(s.buttons);
+    };
+
+    //Under ser du de ulike scenarioene som utløses etter visse valg.
+
+    scenario = {};
+    var scenario = {
+        one: {
+            image: "bilder/scene1.jpg", // Intro først
+            text: "De har store planer for dagen. I dag skal de nemlig delta på oppfinnersamling i byen med oppfinnelsen deres. De skal konkurrere mot Frimand Pløsen og hans angivelig fabelaktige maskin. For å komme seg dit kjører de valg.",
+        },
+        two: {
+            image: "bilder/valg1.jpg", // Et valg skal tas
+            text: "Velkommen NAVN. Det er tid for å velge fremkomstmiddel. Ingen vet hvilket fremkomstmiddel som fører til den minste tiden. Du står nå overfor et svært vanskelig valg som vil ha stor betydning for din videre historie. Velg smart!",
+            buttons: [
+                ["Velg bil som fremkomstmiddel", "advanceTo(scenario.three)"],
+                ["Velg ski som fremkomstmiddel", "advanceTo(scenario.four)"],
+                ["Velg kjelke som fremkomstmiddel", "advanceTo(scenario.five)"]
+            ],
+        },
+        three: {
+            image: "bilder/scene2.jpg", // Valg 1
+            text: "Åneii! Bilen starter ikke, velg noe annet!",
+            buttons: [
+                ["Tilbake til start!", "advanceTo(scenario.two)"]
+            ]
+        },
+        four: {
+            image: "bilder/valg2.jpg", // Valg 2
+            text: "Etter at de tok på seg hver sine skisko, og pakket nisten sin og oppfinnelsen i sekken, gikk de ut for å finne skiene sine. De gikk inn i boden og så etter skiene sine. Turen på ski tar svært lang tid enn normalt, som følger av dårlig føre.",
+            buttons: [
+                ["Gå videre", "advanceTo(scenario.six)"]
+            ]
+        },
+        five: {
+            image: "bilder/valg8.jpg", // Valg 3 
+            text: "Du har valgt kjelke, ikke dumt! Føret er aldri dårlig for en kjelke, den suser ned bakkene uansett. Uuups, vinden var visst svært kraftig, denne turen kan ta tid!",
+            buttons: [
+                ["Gå videre", "advanceTo(scenario.six)"]
+            ]
+        },
+        six: {
+            image: "bilder/valg3.jpg",
+            text: "Det er nå det skal avgjøres. Det er duket av for den siste delen av løpet, nemlig oppfinnerkonkurransen. Alle deltakerne skal lage en oppfinnelse, og dommerne skal dømme ut i fra utseende, funksjon og kvalitet. Velg hvilken oppfinnelse du tror du kan vinne med!",
+            buttons: [
+                ["Uendelighetskule", "advanceTo(scenario.seven)"],
+                ["Kaffemaskin som kun trenger vann", "advanceTo(scenario.eight)"],
+                ["Tyggegummi som aldri mister smak", "advanceTo(scenario.nine)"]
+            ]
+        },
+        seven: {
+            image: "bilder/valg6.jpg",
+            text: "Jaha NAVN, du har valgt uendelighetskulen, interessant valg. Folket elsker godteri, og de kommer til å elske det enda mer når de aldri trenger å kjøpe om og om igjen. Men så gjenstår det, smaker den godt? Vil dommerene like den?",
+            buttons: [
+                ["Gå videre!", "advanceTo(scenario.ten)"]
+            ]
+        },
+        eight: {
+            image: "bilder/valg5.jpg",
+            text: "Hmmm ok NAVN, du har valgt kaffemaskinen, smart valg! Hvem liker vel ikke kaffe? Jubelen stormer fra tilskuerne, men så gjenstår det, er kaffen god nok?",
+            buttons: [
+                ["Gå videre!", "advanceTo(scenario.ten)"]
+            ]
+        },
+        nine: {
+            image: "bilder/valg4.jpg",
+            text: "Jasså NAVN, en tyggegummi som aldri mister smaken sin, høres komplisert ut. Men en ting er sikkert, dette kommer dommerne til å elske! Med mindre den smaker dritt, hehe.",
+            buttons: [
+                ["Gå videre!", "advanceTo(scenario.ten)"]
+            ]
+        },
+        ten: {
+            image: "bilder/valg7.jpg",
+            text: "De setter opp oppfinnelsen sin, og gjør seg klar til folkemengden og dommerne som er på vei. NAVN viser stolt frem oppfinnelsen sin, og det ser ut til at folk liker den. Dommerne går rundt og ser på de ulike oppfinnelsene og noterer ned i blokkene sine, før de går inn og skal bli enig i dommerbua. Konkurransen skal avgjøres av dommerne, som kommer gående ut av dommerbua. De leser opp årets vinner",
+            buttons: [
+                ["Se resultater!", "advanceTo(scenario.eleven)"]
+            ]
+        },
+        eleven: {
+            image: "bilder/valg9.jpg",
+            text: "Oioioi for en seier! braker det løs fra Øyvind Alsaker. Seieren smakte godt for gutane! Spesielt for NAVN som ledet de gjennom konkurransen!",
+            buttons: [
+                ["Avslutt", "advanceTo(scenario.twelve)"]
+            ],
+
+        },
+        twelve: {
+            image: "bilder/valg10.jpg",
+            text: "&nbsp;&nbsp;Takk for at du spilte! Refresh siden eller trykk Start på &nbsp;&nbsp; nytt for å spille igjen.",
+            buttons: [["Start på nytt", "advanceTo(scenario.one)"]]//Her skal det egentlig være mulig å restarte spillet, men vi fikk ikke alle funksjonene til å kjøre på nytt når restart-knappen ble trykt.
+        },
+
+    };
+
+    advanceTo(scenario.one);
+
+</script>
+
+</html>

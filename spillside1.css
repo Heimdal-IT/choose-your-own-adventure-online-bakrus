@@ -1,0 +1,165 @@
+body {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    background-image: url(bilder/bakgrunn.gif);
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+#rdReodor, #rdSolan, #rdLudvig {
+    display: none;
+}
+
+input[type=radio]:checked + img {
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px 3px #B19CD9;
+}
+
+input[type=radio]:checked + img {
+    transform: scale(1.1);
+}
+
+
+
+.reodorStyle {
+    
+    width: 65%;
+    border: 3px solid darkblue;
+    background-color: black;
+    color:darkcyan;
+    height: 250px;
+}
+
+.solanStyle {
+    width: 65%;
+    border: 3px solid green;
+    background-color: black;
+    color: green;
+    height: 250px;
+    
+}
+
+.ludvigStyle {
+    width: 65%;
+    border: 3px solid skyblue;
+    background-color: black;
+    color: skyblue;
+    height: 250px;
+    
+}
+
+.reodorStyle2 {
+    
+    width: 65%;
+    border: 3px solid darkblue;
+    background-color: black;
+    color:darkcyan;
+    font-size: 30px;
+    
+}
+
+.solanStyle2 {
+    width: 65%;
+    border: 3px solid green;
+    background-color: black;
+    color: green;
+    font-size: 30px;
+    
+
+}
+
+.ludvigStyle2 {
+    width: 65%;
+    border: 3px solid skyblue;
+    background-color: black;
+    color: skyblue;
+    font-size: 30px;
+    
+}
+
+#hovedtabell, td{
+    width: 33%;
+}
+
+#hovedtabell{
+    width: 100%;
+}
+
+#redern{
+    width: 300px;
+    height: 350px;
+    
+    
+}
+
+#solern{
+    width: 300px;
+    height: 350px;
+   
+}
+
+#luddern{
+    width: 300px;
+    height: 350px;
+}
+
+#redern:hover, #solern:hover, #luddern:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+h3{
+    text-align: center;
+    font-size: 50px;
+    background-color: azure;
+    border: 5px solid black;
+}
+
+#valgt{
+    height: 40px;
+    width: 10%;
+    background-color: black;
+    font-family: monospace;
+    font-size: 13px;
+    color: darkseagreen;
+   
+}
+
+#valget{
+    font-family: monospace;
+    font-size: 50px;
+    background-color: azure;
+    border: 5px solid black;
+}
+
+#valgt:hover{
+    background-color: chocolate;
+}
+
+#fortsettspillet{
+    height: 40px;
+    width: 10%;
+    background-color: black;
+    font-family: monospace;
+    font-size: 13px;
+    color: darkseagreen;
+  
+}
+
+#fortsettspillet:hover{
+    background-color: chocolate;
+}
+
+/*table, tr, td{
+    border: 3px solid red;
+}*/
+html{
+    border: 10px solid black;
+}
+
+h1{
+    font-family: fantasy;
+    font-size: 70px;
+    color: aliceblue;
+}
