@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flåklypa Adventure</title>
+    <link rel="stylesheet" href="adventure.css">
+    <link rel="icon" href="bilder/icon.png">
+</head>
+
+<body>
+    <div id="startBakgrunn">
+        <div id="startSpill" onclick="startSpill()">
+            <div>
+                <h1>Flåklypa Adventure</h1>
+            </div>
+            <div>
+                <p>Klikk her eller<br />trykk "pil-opp" knapp (<span>&uarr;</span>) for å starte</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="images">
+</div>
+<div id="text">
+</div>
+<input id="input" onkeypress="player" placeholder='Skriv inn navnet ditt og trykk enter'>
+<div id="buttonBox">
+</div>
+
+
+
+<body onload="spillMusikk()">
+</body>
+    
+</body>
+    
+<script>
+    
+   
+    
+     var lyd = new Audio("start.mp3");
+    
+    function spillMusikk(){
+        
+        
+        lyd.play();
+        
+    }
+    
+    let startButton = document.getElementById("startButton")
+
+    /* Start spill ved trykk av pil opp */
+    window.addEventListener("keyup", i => {
+        if (i.keyCode === 38) {
+            document.body.innerHTML = "<div id='forhistorieBakgrunn'><div id='forhistorie'>Sju og tredve mil nordover, litt øst og oppover, ligger Flåklypa, ei lita fjellbygd under himmelhvelvingen. Sjølberga med både dampysteri og campingplass, lokalavis og egen TV-sender. Fritt for vær og vind, akkurat der morgensola renner opp over Storjuvet, bor sykkelreparatør Reodor Felgen og hans to assistenter. I Flåklypa bor det mange forskjellige mennesker, som er opptatt av mange forskjellige ting. Byen har en lang tradisjon for å gi verden spennende oppfinnelser i tide, og utide. Det bor nemlig to konkurrerende oppfinnere i denne snodige verdenen. <br> <br> Reodor Felgen bor på toppen av lenkebakken. Her har han bodd hele livet, og kommer nok til å gjøre dette for resten av sitt liv. Reodor er en oppfinner og kommer stadig på måter å gjøre livet enklere og annerledes for folk flest. Han bor sammen med vennene sine Solan og Ludvig. De er to spenstige personligheter som har veldig ulike trekk. </div><a href='spillside1.html'><button id='startButton'>Videre</button></a></div>"
+        }
+    });
+
+    /*Start spill ved trykk av knapp */
+    function startSpill() {
+        document.body.innerHTML = "<div id='forhistorieBakgrunn'><div id='forhistorie'>Sju og tredve mil nordover, litt øst og oppover, ligger Flåklypa, ei lita fjellbygd under himmelhvelvingen. Sjølberga med både dampysteri og campingplass, lokalavis og egen TV-sender. Fritt for vær og vind, akkurat der morgensola renner opp over Storjuvet, bor sykkelreparatør Reodor Felgen og hans to assistenter. I Flåklypa bor det mange forskjellige mennesker, som er opptatt av mange forskjellige ting. Byen har en lang tradisjon for å gi verden spennende oppfinnelser i tide, og utide. Det bor nemlig to konkurrerende oppfinnere i denne snodige verdenen. <br> <br> Reodor Felgen bor på toppen av lenkebakken. Her har han bodd hele livet, og kommer nok til å gjøre dette for resten av sitt liv. Reodor er en oppfinner og kommer stadig på måter å gjøre livet enklere og annerledes for folk flest. Han bor sammen med vennene sine Solan og Ludvig. De er to spenstige personligheter som har veldig ulike trekk. </div><a href='spillside1.html'><button id='startButton'>Videre</button></a></div>"
+    };
+    
+</script>
+
+</html>
