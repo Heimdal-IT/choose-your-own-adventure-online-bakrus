@@ -34,21 +34,17 @@
 </body>
     
 </body>
-    
 <script>
-    
-   
-    
-     var lyd = new Audio("start.mp3");
-    
-    function spillMusikk(){
-        
-        
-        lyd.play();
-        
-    }
-    
     let startButton = document.getElementById("startButton")
+    
+    var lyd = new Audio("start.mp3");
+
+    function spillMusikk() {
+
+
+        lyd.play();
+
+    }
 
     /* Start spill ved trykk av pil opp */
     window.addEventListener("keyup", i => {

@@ -28,7 +28,7 @@ input[type=radio]:checked + img {
     border: 3px solid darkblue;
     background-color: black;
     color:darkcyan;
-    height: 250px;
+    height: 230px;
 }
 
 .solanStyle {
@@ -36,7 +36,7 @@ input[type=radio]:checked + img {
     border: 3px solid green;
     background-color: black;
     color: green;
-    height: 250px;
+    height: 230px;
     
 }
 
@@ -45,7 +45,7 @@ input[type=radio]:checked + img {
     border: 3px solid skyblue;
     background-color: black;
     color: skyblue;
-    height: 250px;
+    height: 230px;
     
 }
 
