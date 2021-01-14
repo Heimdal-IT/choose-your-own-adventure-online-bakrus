@@ -1,0 +1,159 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flåklypa Adventure</title>
+    <link rel="stylesheet" href="spillside1.css">
+    <link rel="icon" href="bilder/icon.png">
+
+</head>
+
+<body>
+
+    <br>
+
+    <h1 align="center">Flåklypa Adventure</h1>
+
+    <div class="vg">
+        <h3>Velg Karakter:</h3>
+
+        <table id="hovedtabell">
+            <tr>
+                <td align="center">
+                    <label for="rdReodor" class="style" id="labelReodor">
+                        <input type="radio" class="karakter" name="karakter" id="rdReodor" value="Reodor Felgen" />
+                        <img src="bilder/reodor.jpg" id="redern" />
+                        <p class="reodorStyle2">Reodor Felgen</p>
+                    </label>
+                </td>
+                <td align="center"><label for="rdSolan" class="style" id="labelSolan">
+                        <input type="radio" class="karakter" name="karakter" id="rdSolan" value="Solan">
+
+                        <img src="bilder/chooseCharSolan.jpg" id="solern">
+                        <p class="solanStyle2">Solan Gundersen</p>
+                    </label></td>
+                <td align="center"><label for="rdLudvig" class="style" id="labelLudvig">
+                        <input type="radio" class="karakter" name="karakter" id="rdLudvig" value="Ludvig">
+                        <img src="bilder/chooseCharLudvig.jpg" id="luddern">
+                        <p class="ludvigStyle2">Ludvig</p>
+                    </label></td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <div class="reodorStyle">Alder: 62 år <br>
+                        Type: Menneske <br>
+                        Beskrivelse:
+                        Reodor Felgen er en fri og uavhengig mann med mer sans oppfinnelser enn for kundekretsen. Han er sykkelreperatør og bor oppå Flåklypatoppen sammen med Solan Gundersen og Ludvig. Arbeidet fra barnsben av med en to-takter melkemaskin til han ble innlagt på Tynset Sykehus etter et usedvanlig stygt bakspark fra en rødkolle på Storsteigen Landbruksskole
+                        <br>
+                        <br>
+                    </div>
+                </td>
+                <td align="center">
+                    <div class="solanStyle">Alder: 15 år <br>
+                        Art: Pica pica (Antropomorf skjære) <br>
+                        Beskrivelse:
+                        Solan Gundersen er den personifiserte morgenfugl, nonchalant utruga i ei osp attme' Glomma. Han er barnefødt optimist med filttøfler, strikkeskjerf og lav moral. Ludvig er hans rake motsetning - et B-menneske med utpreget høysnue og tydelig angst for gjennomgripende forandringer. Han blir som oftest sett i filttøfler og strikkeskjerf. Solan bor på flåklypatoppen sammen med Ludvig og Reodor Felgen.
+                        <br>
+                        <br>
+                    </div>
+                </td>
+                <td align="center">
+                    <div class="ludvigStyle">Alder: 17 år <br>
+                        Art: Erinaceus europaeus (Piggsvin) <br>
+                        Beskrivelse:
+                        Ludvig er et pinnsvin og bor oppå Flåklypatoppen sammen med Reodor Felgen og Solan Gundersen. Han er pessimist, aktmodig, trives best i utkantstrøk og er redd for det meste. Han er assistent i Solan Gundersens Detektivbyrå. Han bruker også ofte uttykket: det er fali det. Han er svært forsiktig og til tider også noe engstelig. Han kan også være fordelaktig med tanke på risikovurdering i potensielt farlige situasjoner.
+                        <br>
+                        <br>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+
+    <br>
+
+    <br>
+
+    <div id="karaktervalgt" align="center"><input type="button" id="valgt" value="Velg karakter"></div>
+
+    <br>
+
+
+</body>
+
+
+
+<body onload="spillMusikk()">
+
+
+
+
+    <div id="valget" align="center"></div>
+
+    <br>
+
+    <br>
+
+    <br>
+
+    <div id="fortsett" align="center"><a href="spillet.html"><input type="button" id="fortsettspillet" value="Begynn spillet"></a></div>
+
+    <br>
+
+
+    <br>
+
+    <br>
+
+
+
+</body>
+
+<script>
+    var lyd = new Audio("Reodor.mp3");
+
+    function spillMusikk() {
+
+
+        lyd.play();
+
+    }
+    let hentKnapp = document.getElementById("valgt");
+    let valgtKarakter = "";
+    let bestillingstekst = document.getElementById("valget");
+
+    function hentKarakter() {
+
+        let fyr1 = document.getElementById("rdReodor");
+
+        let fyr2 = document.getElementById("rdSolan");
+
+        let fyr3 = document.getElementById("rdLudvig");
+
+        if (fyr1.checked) {
+            valgtKarakter = "Reodor Felgen";
+        } else if (fyr2.checked) {
+            valgtKarakter = "Solan Gundersen";
+        } else if (fyr3.checked) {
+            valgtKarakter = "Ludvig";
+        } else {
+            window.alert("Vennligst velg karakter!")
+        }
+    }
+
+    function hentvalgtKarakter() {
+        let fyrern = hentKarakter();
+        if (valgtKarakter == "") {
+            bestillingstekst.innerHTML = "";
+        } else {
+            bestillingstekst.innerHTML = "Du har valgt" + " " + valgtKarakter;
+        }
+        console.log(valgtKarakter);
+    }
+    hentKnapp.addEventListener("click", hentvalgtKarakter);
+
+</script>
+
+</html>
